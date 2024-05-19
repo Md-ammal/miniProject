@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bar Chart with Grid Lines</title>
+<style>
+#bgimg {
+	margin: 200px auto; /* Center the chart */
+	width: 400px; /* Set width for the chart container */
+	height: 300px; /* Set height for the chart container */
+	background-color: #EEE; /* Background color for the chart container */
+	position: relative;
+	display: "";
+}
+.axis-line {
+	position: absolute;
+	bottom: 0;
+	left: 15px;
+	width: 2px;
+	background-color: #000;
+	height: 100%;
+}
+.y-label {
+	position: absolute;
+	bottom: -15px;
+	font-size: 12px;
+	text-align: center;
+}
+.grid-line {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #BBB; /* Color of grid lines */
+	left: 1px;
+}
+#b1, #b2, #b3 {
+	width: 30px; /* Width of each bar */
+	position: absolute;
+	bottom: 0;
+}
+#b1 {
+	height: 100%; /* Height of the first bar */
+	background-color: #000;
+	left: 30px;
+}
+#b2 {
+	height: 50%; /* Height of the second bar */
+	background-color: #F00;
+	left: 60px;
+}
+#b3 {
+	height: 75%; /* Height of the third bar */
+	background-color: #003;
+	left: 85px;
+}
+.grid-line1 {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #BBB; /* Color of grid lines */
+	left: 6px;
+}
+#bar1, #bar2, #bar3 {
+	padding: 2px;
+	height: 200px;
+	width: 290px;
+	position: fixed;
+	top: 150px;
+	;
+	left: 10px;
+	line-height: 15px;
+	border: #666 2px solid;
+	display: none;
+}
+</style>
+</head>
+<body>
+<script>
+function display() {
+  document.getElementById("b1").style.backgroundColor = document.getElementById("color").value;
+}
+function detail_b1(){
+	document.getElementById("bar1").style.display = "block";
+	}
+function detail_b2(){
+	document.getElementById("bar2").style.display = "block";
+	}
+function detail_b3(){
+	document.getElementById("bar3").style.display = "block";
+	}
+function detail_b1_(){
+	document.getElementById("bar1").style.display = "none";
+	}
+function detail_b2_(){
+	document.getElementById("bar2").style.display = "none";
+	}
+function detail_b3_(){
+	document.getElementById("bar3").style.display = "none";
+	}
+
+function chHeight(){
+	h = document.getElementById("hgt").value ;
+	document.getElementById("b1").style.height = h + "%";
+	}
+</script>
+<fieldset >
+  <legend >BAR 1</legend>
+  <div id="d-b1">
+    <font size="5">color : </font>
+    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+  </div>
+  
+  <p><font size="5">Height :</font>
+    <input type="number" size="3" oninput="chHeight()" id="hgt">
+  </p>
+</fieldset>
+<fieldset >
+  <legend >BAR 2</legend>
+  <div id="d-b2"> <font size="5">color : </font>
+    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+  </div>
+  
+  <p><font size="5">Height :</font>
+    <input type="number" size="3" oninput="chHeight()" id="hgt">
+  </p>
+</fieldset>
+<fieldset >
+  <legend >BAR 3</legend>
+  <div id="d-b3"> <font size="5">color : </font>
+    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+  </div>
+  
+  <p><font size="5">Height :</font>
+    <input type="number" size="3" oninput="chHeight()" id="hgt">
+  </p>
+</fieldset>
+
+<!-- details of each bar -->
+<div id="bar1">
+  <h1>BAR 1</h1>
+  <font color="#000099"> height<font color="#FF00FF"><strong>:</strong></font> 100%; <font color="#999999">/* Height of the first bar */</font><br>
+  background-color<font color="#FF00FF"><strong>:</strong></font> #000<font color="#FF00FF"><strong>;</strong></font><br>
+  left<font color="#FF00FF"><strong>:</strong></font>30px<font color="#FF00FF"><strong>;</strong></font><br>
+  width<font color="#FF00FF"><strong>:</strong></font> 30px<font color="#FF00FF"><strong>;</strong></font> <font color="#999999">/* Width of each bar */</font><br>
+  position<font color="#FF00FF"><strong>:</strong></font> absolute<font color="#FF00FF"><strong>;</strong></font><br>
+  bottom<font color="#FF00FF"><strong>:</strong></font> 0<font color="#FF00FF"><strong>;</strong></font> </font> </div>
+<div id="bar2">
+  <h1>BAR 2</h1>
+  <font color="#000099"> height<font color="#FF00FF"><strong>:</strong></font> 50%<font color="#FF00FF"><strong>;</strong></font> <font color="#999999">/* Height of the second bar */</font><br>
+  background-color<font color="#FF00FF"><strong>:</strong></font> #F00<font color="#FF00FF"><strong>;</strong></font><br>
+  left<font color="#FF00FF"><strong>:</strong></font>60px<font color="#FF00FF"><strong>;</strong></font><br>
+  width<font color="#FF00FF"><strong>:</strong></font> 30px<font color="#FF00FF"><strong>;</strong></font> <font color="#999999">/* Width of each bar */</font><br>
+  position<font color="#FF00FF"><strong>:</strong></font> absolute<font color="#FF00FF"><strong>;</strong></font><br>
+  bottom<font color="#FF00FF"><strong>:</strong></font> 0<font color="#FF00FF"><strong>;</strong></font> </font> </div>
+<div id="bar3">
+  <h1>BAR 3</h1>
+  <font color="#000099"> height<font color="#FF00FF"><strong>:</strong></font> 75%<font color="#FF00FF"><strong>;</strong></font> <font color="#999999">/* Height of the third bar */</font><br>
+  background-color<font color="#FF00FF"><strong>:</strong></font> #003<font color="#FF00FF"><strong>;</strong></font><br>
+  left<font color="#FF00FF"><strong>:</strong></font> 85px<font color="#FF00FF"><strong>;</strong></font><br>
+  width<font color="#FF00FF"><strong>:</strong></font> 30px<font color="#FF00FF"><strong>;</strong></font> <font color="#999999">/* Width of each bar */</font><br>
+  position<font color="#FF00FF"><strong>:</strong></font> absolute<font color="#FF00FF"><strong>;</strong></font><br>
+  bottom<font color="#FF00FF"><strong>:</strong></font>0<font color="#FF00FF"><strong>;</strong></font> </font> </div>
+<div id="bgimg"> 
+  <!-- Y-axis labels and grid lines --> 
+  <!--div class="y-label" style="left: 0px;">0</div>
+  <!--div class="y-label" style="left: 10px; bottom: 100px;">2</div>
+  <div class="y-label" style="left: 10px; bottom: 150px;">1</div--> 
+  <font size="1" face="Arial, Helvetica, sans-serif">
+  <div class="grid-line" style="bottom: 0px; background-color:#000;"><strong>0</strong></div>
+  <div class="grid-line" style="bottom: 15px;">5</div>
+  <div class="grid-line" style="bottom: 30px;">10</div>
+  <div class="grid-line" style="bottom: 45px;">15</div>
+  <div class="grid-line" style="bottom: 60px;">20</div>
+  <div class="grid-line" style="bottom: 75px;">25</div>
+  <div class="grid-line" style="bottom: 90px;">30</div>
+  <div class="grid-line" style="bottom: 105px;">35</div>
+  <div class="grid-line" style="bottom: 120px;">40</div>
+  <div class="grid-line" style="bottom: 135px;">45</div>
+  <div class="grid-line" style="bottom: 150px;">50</div>
+  <div class="grid-line" style="bottom: 165px;">55</div>
+  <div class="grid-line" style="bottom: 180px;">60</div>
+  <div class="grid-line" style="bottom: 195px;">65</div>
+  <div class="grid-line" style="bottom: 210px;">70</div>
+  <div class="grid-line" style="bottom: 225px;">75</div>
+  <div class="grid-line" style="bottom: 240px;">80</div>
+  <div class="grid-line" style="bottom: 255px;">85</div>
+  <div class="grid-line" style="bottom: 270px;">90</div>
+  <div class="grid-line" style="bottom: 285px;">95</div>
+  <div class="grid-line" style="bottom: 300px;">100</div>
+  </font> 
+  <!-- X-axis measurement lines and labels -->
+  <div class="axis-line"></div>
+  <!-- Bars -->
+  <div id="b1" onMouseOver="detail_b1()" onMouseOut="detail_b1_()"></div>
+  <div id="b2" onMouseOver="detail_b2()" onMouseOut="detail_b2_()"></div>
+  <div id="b3" onMouseOver="detail_b3()" onMouseOut="detail_b3_()"></div>
+</div>
+</body>
+</html>
