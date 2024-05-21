@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Bar Chart with Grid Lines</title>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <style>
 #bgimg {
 	margin: 200px auto; /* Center the chart */
@@ -76,9 +76,19 @@
 </head>
 <body>
 <script>
+    /*Coloring functions*/
 function display() {
   document.getElementById("b1").style.backgroundColor = document.getElementById("color").value;
+//   $("#b1").css("background-color", $('#color').val());
 }
+function display2() {
+  document.getElementById("b2").style.backgroundColor = document.getElementById("color2").value;
+}
+function display3() {
+  document.getElementById("b3").style.backgroundColor = document.getElementById("color3").value;
+}
+    /*Details showing functions*/
+        /*To show*/
 function detail_b1(){
 	document.getElementById("bar1").style.display = "block";
 	}
@@ -88,6 +98,7 @@ function detail_b2(){
 function detail_b3(){
 	document.getElementById("bar3").style.display = "block";
 	}
+        /*To hide*/
 function detail_b1_(){
 	document.getElementById("bar1").style.display = "none";
 	}
@@ -97,17 +108,25 @@ function detail_b2_(){
 function detail_b3_(){
 	document.getElementById("bar3").style.display = "none";
 	}
-
+    /*Height functions*/
 function chHeight(){
 	h = document.getElementById("hgt").value ;
 	document.getElementById("b1").style.height = h + "%";
+	}
+function chHeight2(){
+	h = document.getElementById("hgt2").value ;
+	document.getElementById("b2").style.height = h + "%";
+	}
+function chHeight3(){
+	h = document.getElementById("hgt3").value ;
+	document.getElementById("b3").style.height = h + "%";
 	}
 </script>
 <fieldset >
   <legend >BAR 1</legend>
   <div id="d-b1">
     <font size="5">color : </font>
-    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34" id="color">
   </div>
   
   <p><font size="5">Height :</font>
@@ -117,21 +136,21 @@ function chHeight(){
 <fieldset >
   <legend >BAR 2</legend>
   <div id="d-b2"> <font size="5">color : </font>
-    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+    <input type="text" oninput="display2(this)" placeholder="ENTER COLOR name (without spacing)" size="34" id="color2">
   </div>
   
   <p><font size="5">Height :</font>
-    <input type="number" size="3" oninput="chHeight()" id="hgt">
+    <input type="number" size="3" oninput="chHeight2()" id="hgt2">
   </p>
 </fieldset>
 <fieldset >
   <legend >BAR 3</legend>
   <div id="d-b3"> <font size="5">color : </font>
-    <input type="text" oninput="display(this)" placeholder="ENTER COLOR name (without spacing)" size="34"id="color">
+    <input type="text" oninput="display3(this)" placeholder="ENTER COLOR name (without spacing)" size="34" id="color3">
   </div>
   
   <p><font size="5">Height :</font>
-    <input type="number" size="3" oninput="chHeight()" id="hgt">
+    <input type="number" size="3" oninput="chHeight3()" id="hgt3">
   </p>
 </fieldset>
 
