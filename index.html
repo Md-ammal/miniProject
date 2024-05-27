@@ -4,13 +4,25 @@
         <title>content</title>
     </head>
     <style>
+        a::after{
+            background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,0,0,1));
+        }
+        li:hover{
+            background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(255,182,193,1));
+        }
 div.frame {
   position: absolute;
   left: auto;
   width: 80%;
   margin-left: 18%;
-  height: 100%;
-  /* border: 3px solid blue; */
+  height: 90%;
+  resize: both;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  border: 3px solid black;
+  min-height: 200px;
+  min-width: 200px;
 } 
 
 div.list {
@@ -19,14 +31,14 @@ div.list {
   width: auto;
   height: 100%;
   /* border: 3px solid green; */
-} 
+}
 </style>
     <body>
         <div class="a">
         <div class="frame">
             <iframe src="" name="iframe_a" height="100%" width="100%" title="Iframe Example"></iframe>
         </div>
-        <div class="list">
+        <div class="list" >
             <ul type="none">
                 <li><a href="https://md-ammal.github.io/resume" target="iframe_a">Resume</a></li>
                 <li><a href="https://md-ammal.github.io/miniProject/chart_diagram.html" target="iframe_a">Chart Diagram</a></li>
